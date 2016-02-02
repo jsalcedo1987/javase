@@ -25,7 +25,7 @@ The image contains a control.sh script, this script has several operations.
 
 #### Help
 
-docker run --rm -ti globalpaas/javase:1 help
+docker run --rm -ti produban/javase:1 help
 ```
 ========================================
 USAGE: /control.sh COMMAND [args]
@@ -42,7 +42,7 @@ USAGE: /control.sh COMMAND [args]
 #### Info
 The info operation shows only image's metadafa information.
 
-docker run --rm -ti globalpaas/javase:1 info
+docker run --rm -ti produban/javase:1 info
 ```
 com.produban.components=java8, wily Introscope 9.7
 com.produban.description=Java 8 runtime for Spring boot microservices
@@ -51,7 +51,7 @@ com.produban.imageowner=Products and Services
 #### Status
 The status operation shows information about the running proccess
 
-docker run --rm -ti globalpaas/javase:1 status
+docker run --rm -ti produban/javase:1 status
 ```
 top - 07:56:33 up 10 days,  5:29,  0 users,  load average: 0.43, 0.42, 0.41
 Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
@@ -68,7 +68,7 @@ KiB Swap:  8265724 total,  4965660 free,  3300064 used.  1416092 avail Mem
 The start operation initialize the java process, by default the start script looks for JAR files inside /opt/app directory, the first JAR file found will be used as the application, if no JAR files are found the start operation will use the default Spring Boot application /application.jar, this application can be used for testing.
 
 ```
-docker run -d -p 0.0.0.0:8081:8080 globalpaas/javase:1 start
+docker run -d -p 0.0.0.0:8081:8080 produban/javase:1 start
 ```
 
 In this example the default application is executed.
@@ -79,7 +79,7 @@ In this example the default application is executed.
 This operation starts the /bin/bash shell
 
 ```
-docker run --rm -ti globalpaas/javase:1 shell
+docker run --rm -ti produban/javase:1 shell
 ```
 
 #### Environment Variables
@@ -89,7 +89,7 @@ JAVA_OPTS_EXT
 Use this variable to add new parameters o properties to the java runtime process
 
 ```
-docker run -e JAVA_OPTS_EXT="-Dapp.title=Test -Xms256M" -d -p 8080:8080 globalpaas/javase:1 start
+docker run -e JAVA_OPTS_EXT="-Dapp.title=Test -Xms256M" -d -p 8080:8080 produban/javase:1 start
 ```
 In this example we configure the initial heap size to 256MB also we add a java property called "app.title".
 
@@ -110,11 +110,11 @@ packaging is useful to package certificates, configuration files, java security 
 The package tgz/zip is deplyecin the /opt/app directory.
 
 ```
-docker run -e JAR_PATH="/opt/app/vivaRealMadrid.jar" -d -p 8080:8080 globalpaas/javase:1 start
+docker run -e JAR_PATH="/opt/app/vivaRealMadrid.jar" -d -p 8080:8080 produban/javase:1 start
 ```
 
 ```
-docker run -ti --rm --env ARTIFACT_URL=http://192.168.1.39:8383/application.jar globalpaas/javase:1.1
+docker run -ti --rm --env ARTIFACT_URL=http://192.168.1.39:8383/application.jar produban/javase:1.1
 ```
 
 ### Memory considerations when running inside Openshift
@@ -164,7 +164,7 @@ Wily Introscope's port number.
 
 ## How to create new images from JavaSE imagen
 
-In this example we will create new SpringBoot application using globalpaas/javase:1 as the base image.
+In this example we will create new SpringBoot application using produban/javase:1 as the base image.
 
 Dockerfile
 
