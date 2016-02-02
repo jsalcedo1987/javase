@@ -19,7 +19,7 @@ With this feature you can run every Java application with a default memory confi
 #### Enable CA Instrocope APM Wily monitoring.
 You can enable monitoring for your application. To do this, you have to provide the Wily Agent files and set the environment variables to connect with the Metrics Collector.
 
-### How to use image
+## How to use image
 
 The image contains a control.sh script, this script has several operations.
 
