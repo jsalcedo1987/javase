@@ -110,7 +110,7 @@ packaging is useful to package certificates, configuration files, java security 
 The package tgz/zip is deplyecin the /opt/app directory.
 
 ```
-docker run -e JAR_PATH="/opt/app/vivaRealMadrid.jar" -d -p 8080:8080 produban/javase:1 start
+docker run -e JAR_PATH="/opt/app/myapp.jar" -d -p 8080:8080 produban/javase:1 start
 ```
 
 ```
