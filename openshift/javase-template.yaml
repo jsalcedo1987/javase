@@ -99,7 +99,7 @@ objects:
             value: ${WILY_MOM_PORT}
           - name: TZ
             value: ${TZ}
-          image: registry.lvtc.gsnet.corp/produban/javase:latest
+          image: globalpaas/javase:1
           imagePullPolicy: Always
           name: ${APP_NAME}
           ports:
