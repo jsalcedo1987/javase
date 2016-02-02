@@ -145,7 +145,7 @@ parameters:
 - description: Java options
   displayName: JVM options
   name: JAVA_OPTS_EXT
-  value: -Djava.security.egd=file:/dev/./urandom -Xmx400m
+  value: -Djava.security.egd=file:/dev/./urandom
 - description: Application java parameters
   displayName: JVM application parameters
   name: JAVA_PARAMETERS
