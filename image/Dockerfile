@@ -44,7 +44,7 @@ RUN groupadd --gid $GID java && useradd --uid $UID -m -g java java && \
     yum clean all
 
 ADD scripts $IMAGE_SCRIPTS_HOME
-ADD wilyAgent $WILY_HOME/wilyAgent
+##ADD wilyAgent $WILY_HOME/wilyAgent
 ADD certs $IMAGE_SCRIPTS_HOME/certs
 
 RUN chown -R java:java $APP_HOME && \
